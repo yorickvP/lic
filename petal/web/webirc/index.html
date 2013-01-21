@@ -2,6 +2,75 @@
 <html>
 <head>
 <script type="text/javascript" src="/browserify.js"></script>
+<style>
+#status {
+	/*background-color: red;*/
+}
+#channel {
+	/*background-color: green;*/
+}
+#main {
+	/*background-color: blue;*/
+}
+#input {
+	/*background-color: yellow;*/
+}
+#nicks {
+	/*background-color: orange;*/
+}
+html,body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: #0d1926;
+	color: #d9e6f2;
+	font-family: "Droid Sans Mono";
+	font-size: 10pt;
+}
+#container {
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	-webkit-flex: 1 100 auto;
+	-moz-flex: 1 100 auto;
+    flex: 1 100 auto;
+    -webkit-align-self: strech;
+    min-height: 0;
+}
+#container > div {
+	border: 1px solid black;
+}
+#channel,#nicks {
+	-webkit-flex: 1 3 15%;
+	-moz-flex: 1 3 15%;
+	flex: 1 3 15%;
+}
+#main {
+	-webkit-flex: 7 1 auto;
+	-moz-flex: 7 1 auto;
+    flex: 7 1 auto;
+    overflow-y: scroll;
+}
+#vertical {
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
+}
+</style>
 </head>
-<body> foo = <span id="result"></span></body>
+<body>
+<div id="vertical">
+	<div id="status">status</div>
+	<div id="container">
+		<div id="channel">channel</div>
+		<div id="main">main</div>
+		<div id="nicks">nick</div>
+	</div>
+	<div id="input">input</div>
+</div>
+</body>
 </html>

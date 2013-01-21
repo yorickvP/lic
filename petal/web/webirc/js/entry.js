@@ -1,10 +1,10 @@
+/*jshint browser:true */
 var shoe = require('shoe');
 var dnode = require('dnode');
 
 var domready = require('domready');
 
 domready(function () {
-    var result = document.getElementById('result');
     var stream = shoe('/dnode');
     
     var d = dnode();
@@ -19,4 +19,15 @@ domready(function () {
         console.log(remote);
     });
     d.pipe(stream).pipe(d);
+    var main = document.getElementById("main");
+    main.innerHTML = "";
+    var num = 100;
+    var int = setInterval(function(){
+        var line = document.createElement("div");
+        line.innerHTML = "hello";
+        main.appendChild(line);
+        if (--num === 0) {
+            clearInterval(int);
+        }
+    }, 100);
 });

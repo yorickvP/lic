@@ -115,7 +115,6 @@ domready(function () {
     var mainout = new OutputField(document.getElementById('main'));
     var mainin = new InputField(document.getElementById('input'));
     var statusout = new StatusField(document.getElementById('status'));
-    mainin.on('input', console.log);
     mainin.on('input', function(content) {
         mainout.append(content);
     });
@@ -126,6 +125,7 @@ domready(function () {
         statusout.set('Connected'); // ping here?
         petal.handle.subscribe(['irc', '*'], '*', function(event) {
             mainout.appendHTML(ircToHTML(event));
+            event.next(event);
         });
     });
     petal.on('disconnect', function() {

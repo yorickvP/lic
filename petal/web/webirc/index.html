@@ -14,6 +14,16 @@
 }
 #input {
 	/*background-color: yellow;*/
+	width: 100%;
+}
+#input > input {
+	background-color: #0d1926;
+	color: #d9e6f2;
+	font-family: "Droid Sans Mono";
+	font-size: 10pt;
+	width: 100%;
+	border: none;
+	outline: none;
 }
 #nicks {
 	/*background-color: orange;*/
@@ -31,9 +41,9 @@ html,body {
 	display: flex;
 	display: -webkit-flex;
 	display: -moz-flex;
-	-webkit-flex: 1 100 auto;
-	-moz-flex: 1 100 auto;
-    flex: 1 100 auto;
+	-webkit-flex: 1 1 auto;
+	-moz-flex: 1 1 auto;
+    flex: 1 1 auto;
     -webkit-align-self: strech;
     min-height: 0;
 }
@@ -60,6 +70,9 @@ html,body {
 	flex-direction: column;
 	height: 100%;
 }
+.textline > span {
+	margin-right: 1em;
+}
 </style>
 </head>
 <body>
@@ -70,7 +83,7 @@ html,body {
 		<div id="main">main</div>
 		<div id="nicks">nick</div>
 	</div>
-	<div id="input">input</div>
+	<div id="input"><input type="text" /></div>
 </div>
 </body>
 </html>
